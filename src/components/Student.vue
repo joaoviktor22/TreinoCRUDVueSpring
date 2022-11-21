@@ -6,12 +6,14 @@
                 <th> Student ID </th>
                 <th> Student Nome</th>
                 <th> Student Numero</th>
+                <td> Editar </td>
             </thead>
             <tbody>
                 <tr v-for = "student in students" v-bind:key = "student.id">
                     <td>{{student.id}}</td>
                     <td>{{student.nome}}</td>
                     <td>{{student.numero}}</td>
+                    <td><a style="background-color: green;color: branco" class="badge badge-warning" :href="'/student/' + student.id">Edit</a></td>
                 </tr>
             </tbody>
         </table>

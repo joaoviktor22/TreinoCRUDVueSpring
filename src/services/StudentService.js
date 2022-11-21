@@ -1,8 +1,11 @@
 import axios from 'axios'
-
+import http from "../http-common";
 const STUDENT_API_BASE_URL = 'http://localhost:8080/students'
 
 class StudentService{
+    get(id) {
+        return http.get(`/student/${id}`);
+      }
     getStudent(){
         return axios.get(STUDENT_API_BASE_URL);
     }

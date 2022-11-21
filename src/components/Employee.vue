@@ -6,6 +6,7 @@
         <input
           type="text"
           class="form-control"
+          style="margin-right: auto;margin-left:auto;width: 20%"
           id="age"
           required
           v-model="employee.age"
@@ -17,13 +18,14 @@
         <label for="name">Name</label>
         <input
           class="form-control"
+          style="margin-right: auto;margin-left:auto;width: 20%"
           id="name"
           required
           v-model="employee.name"
           name="name"
         />
       </div>
-      <button @click="saveEmployee" class="btn btn-success">Submit</button>
+      <button style="margin-top:5px" @click="saveEmployee" class="btn btn-success">Submit</button>
   </div>
         <table class="table table-striped">
             <thead>

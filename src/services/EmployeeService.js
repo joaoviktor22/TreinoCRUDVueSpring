@@ -1,8 +1,12 @@
 import axios from 'axios'
+import http from "../http-common";
 
 const EMPLOYEE_API_BASE_URL = 'http://localhost:8080/employees'
 
 class EmployeeService{
+    getAll() {
+        return http.get("/employees");
+    }
     getEmployees(){
         return axios.get(EMPLOYEE_API_BASE_URL);
     }
