@@ -12,11 +12,7 @@ const toastTypes = {
   warn: 'warn'
 }
 
-miniToastr.init({style: {
-  'mini-toastr__notification': {
-    position: 'relative'
-  }
-},types: toastTypes})
+miniToastr.init({types: toastTypes})
 
 function toast ({title, message, type, timeout, cb}) {
   return miniToastr[type](message, title, timeout, cb)
