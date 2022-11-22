@@ -20,13 +20,13 @@
         </div>
       </form>
   
-      <button class="badge badge-danger mr-2"
+      <button style="background-color: red;color: black;" class="badge badge-danger mr-2"
         @click="deleteStudent"
       >
         Delete
       </button>
   
-      <button type="submit" class="badge badge-success"
+      <button style="background-color: yellow;margin-left: 10px;color: black;" type="submit" class="badge badge-success"
         @click="updateStudent"
       >
         Update
@@ -67,9 +67,10 @@
         StudentService.putStudentOne(this.currentStudent.id, this.currentStudent)
           .then(response => {
             console.log(response.data);
-            this.message = 'The student was updated successfully!';
+            this.showUpdateSuccess();
           })
           .catch(e => {
+            this.showUpdateError();
             console.log(e);
           });
       },
@@ -79,10 +80,34 @@
           .then(response => {
             console.log(response.data);
             this.$router.push({ name: "student" });
+            this.showDeleteSuccess();
           })
           .catch(e => {
             console.log(e);
+            this.showDeleteError();
           });
+      }
+    },
+    notifications: {
+      showUpdateError: { // You can have any name you want instead of 'showLoginError'
+        title: 'Update Error',
+        message: 'Falhou ao dar Update',
+        type: 'error' // You also can use 'VueNotifications.types.error' instead of 'error'
+      },
+      showUpdateSuccess: { // You can have any name you want instead of 'showLoginError'
+        title: 'Update Success',
+        message: 'Sucesso ao dar Update',
+        type: 'success' // You also can use 'VueNotifications.types.error' instead of 'error'
+      },
+      showDeleteError: { // You can have any name you want instead of 'showLoginError'
+        title: 'Delete Error',
+        message: 'Falhou ao dar Delete',
+        type: 'error' // You also can use 'VueNotifications.types.error' instead of 'error'
+      },
+      showDeleteSuccess: { // You can have any name you want instead of 'showLoginError'
+        title: 'Delete Success',
+        message: 'Sucesso ao dar Delete',
+        type: 'success' // You also can use 'VueNotifications.types.error' instead of 'error'
       }
     },
     mounted() {

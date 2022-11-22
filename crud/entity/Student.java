@@ -3,6 +3,7 @@ package com.treinobrisa.crud.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Student {
@@ -10,9 +11,9 @@ public class Student {
 	@Id
 	@GeneratedValue
 	private Long id;
-
+	@NotBlank
 	private String nome;
-
+	@NotBlank
 	private String numero;
 	
 	public Long getId() {

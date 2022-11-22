@@ -16,7 +16,7 @@ import com.treinobrisa.crud.entity.Student;
 import com.treinobrisa.crud.repository.StudentRepository;
 
 @RestController
-@CrossOrigin("http://localhost:8082/")
+@CrossOrigin("http://localhost:8083/")
 public class StudentController{
 
 	@Autowired
@@ -53,5 +53,5 @@ public class StudentController{
 	
 		return studentRepository.save(stud);
 	}
-	
+
 }

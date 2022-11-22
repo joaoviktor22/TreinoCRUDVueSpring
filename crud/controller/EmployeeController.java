@@ -18,7 +18,7 @@ import com.treinobrisa.crud.service.EmployeeService;
 
 @RestController
 @RequestMapping("/employees")
-@CrossOrigin("http://localhost:8082/")
+@CrossOrigin("http://localhost:8083/")
 public class EmployeeController {
 	
 	@Autowired
